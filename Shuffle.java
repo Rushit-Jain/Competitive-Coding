@@ -22,7 +22,7 @@ public class Shuffle
         int sol[]=new int[n];
         int status[]=new int[n];
         int arr[]=new int[n];
-        if(n%k==0 && k%2==0)
+        if(n%k==0)
         {
             for(i=0;i<n;i++)
             {
@@ -51,8 +51,13 @@ public class Shuffle
                 c+=k;
                 count--;
             }
-            for(i=0;i<n;i++)
-                System.out.print(sol[i]+" ");
+            if(sol[n-1]!=0)
+            {
+                for(i=0;i<n;i++)
+                    System.out.print(sol[i]+" ");
+            }
+            else
+                System.out.println("-1");
         }
         else
         {
