@@ -138,6 +138,8 @@ public class Amazon
 19, 10, 13, 19, 18, 6, 18, 8, 16, 13, 4, 18, 14, 6, 17, 5, 20, 9, 12, 5, 8, 15,
 19, 1, 2, 19, 1, 14, 15, 14, 14, 10, 10, 14, 8, 2, 5, 1, 1, 9, 18, 13, 11, 5, 15,
 17, 20, 3, 14, 4, 10, 20, 8, 1, 20, 7, 20, 4, 16, 14, 1, 5, 12, 17, 5, 3, 5, 8, 3};
+        for(i=0;i<20;i++)
+            freq[i]=0;
         for(i=0;i<case1.length;i++)
             freq[case1[i]-1]++;
             int max=freq[0];
@@ -154,6 +156,8 @@ public class Amazon
                     break;
                 }
             }
+            for(i=0;i<20;i++)
+            freq[i]=0;
                             for(i=0;i<case2.length;i++)
             freq[case2[i]-1]++;
             max=freq[0];
@@ -170,6 +174,8 @@ public class Amazon
                     break;
                 }
             }
+            for(i=0;i<20;i++)
+            freq[i]=0;
                     for(i=0;i<case3.length;i++)
             freq[case3[i]-1]++;
             max=freq[0];
@@ -186,6 +192,8 @@ public class Amazon
                     break;
                 }
             }
+            for(i=0;i<20;i++)
+            freq[i]=0;
                     for(i=0;i<case4.length;i++)
             freq[case4[i]-1]++;
             max=freq[0];
