@@ -6,9 +6,18 @@ public class DoctorDilemma
         for(int i=0;i<arr.length;i++)
         {
             if(arr[i]==s)
-                return 1;
+                return -1;
         }
-        return -1;
+        return 1;
+    }
+    int sumcheck(int arr[], int s, int k)
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            if((arr[i]+s)%k==0 && arr[i]!=0)
+                return -1;
+        }
+        return 1;
     }
     public static void main(String args[])
     {
@@ -24,19 +33,18 @@ public class DoctorDilemma
         for(i=0;i<n;i++)
         {
             for(j=i+1;j<n;j++)
-            {
+            {                
                 sum=arr[i]+arr[j];
-                if(sum%k!=0)
+                if(sum%k==0)
+                    continue;
+                else
                 {
-                    if(ob.check(sol,arr[i])!=-1 && ob.check(sol,arr[j])==-1)
-                        sol[count++]=arr[j];
-                    else if(ob.check(sol,arr[i])==-1 && ob.check(sol,arr[j])!=-1)
-                        sol[count++]=arr[j];
-                    else if(ob.check(sol,arr[i])==-1 && ob.check(sol,arr[j])==-1)
+                    if(ob.check(sol, arr[i])==1 && ob.sumcheck(sol, arr[i], k)==1)
                     {
                         sol[count++]=arr[i];
-                        sol[count++]=arr[j];
                     }
+                    else if(ob.check(sol, arr[j])==1 && ob.sumcheck(sol, arr[j], k)==1)
+                        sol[count++]=arr[j];
                 }
             }
         }
