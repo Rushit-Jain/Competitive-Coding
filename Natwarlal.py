@@ -1,23 +1,25 @@
-list=[6,5,4,3,2,1] #Here is the static input for the piles of coins
+lis=[111,1111,112,12,13,1,445,1000,2112,1221,90,80,5,7,8,9,190,200,212,567,777,899,123,22,45,77,8,9,10,233,221,34,222,190,80,70,35,32,12,0]
+t=sum(lis)
 n=0
 o=0
-while(list!=[]):
-	m=max(list[0],list[len(list)-1])
+while(lis!=[]):
+	m=max(lis[0],lis[-1])
 	n=n+m
-	if(m==list[0]):
-		list.pop(0)
+	if(m==lis[0]):
+		lis.pop(0)
 	else:
-		list.pop(len(list)-1)
-	m=max(list[0],list[len(list)-1])
+		lis.pop(-1)
+	nch=False
+	m=max(lis[0],lis[-1])
 	o=o+m
-	if(m==list[0]):
-		list.pop(0)
+	if(m==lis[0]):
+		lis.pop(0)
 	else:
-		list.pop(len(list)-1)
-if(n>o):
-	n=n+o
-	o=0
+		lis.pop(-1)
+	nch=True
+if(nch==True):
+    print(t)
 else:
-	o=n+o
-	n=0
-print(n)
+    print('0')
+#21, 211, 15099, 10605 = 25936
+#This code is for the third test case. Change the lis variable as per the requirement
