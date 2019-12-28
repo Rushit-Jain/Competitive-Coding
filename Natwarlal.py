@@ -1,0 +1,21 @@
+list=[6,5,4,3,2,1] #Here is the static input for the piles of coins
+n=0
+o=0
+while(list!=[]):
+	m=max(list[0],list[len(list)-1])
+	n=n+m
+	if(m==list[0]):
+		list.pop(0)
+	else:
+		list.pop(len(list)-1)
+	m=max(list[0],list[len(list)-1])
+	o=o+m
+	if(m==list[0]):
+		list.pop(0)
+	else:
+		list.pop(len(list)-1)
+if(n>o):
+	n=n+o
+else:
+	o=n+o
+print(n)
