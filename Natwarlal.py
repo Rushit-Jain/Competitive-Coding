@@ -16,6 +16,8 @@ while(list!=[]):
 		list.pop(len(list)-1)
 if(n>o):
 	n=n+o
+	o=0
 else:
 	o=n+o
+	n=0
 print(n)
