@@ -2,7 +2,7 @@ lis=[111,1111,112,12,13,1,445,1000,2112,1221,90,80,5,7,8,9,190,200,212,567,777,8
 t=sum(lis)
 n=0
 o=0
-while(lis!=[]):
+while(lis!=[] and nch==True):
 	m=max(lis[0],lis[-1])
 	n=n+m
 	if(m==lis[0]):
@@ -10,13 +10,14 @@ while(lis!=[]):
 	else:
 		lis.pop(-1)
 	nch=False
-	m=max(lis[0],lis[-1])
-	o=o+m
-	if(m==lis[0]):
-		lis.pop(0)
-	else:
-		lis.pop(-1)
-	nch=True
+	if(nch==False):
+		m=max(lis[0],lis[-1])
+		o=o+m
+		if(m==lis[0]):
+			lis.pop(0)
+		else:
+			lis.pop(-1)
+		nch=True
 if(nch==True):
     print(t)
 else:
